@@ -9,6 +9,7 @@ module.exports = {
       'roboto': ['Roboto', 'sans-serif'],
       'poppins': ['poppins','sans-serif'],
       'passion':['Passion One', 'cursive'],
+      'jost': ['Jost', 'sans-serif'],
     },
     screens: {
       'xxs':'320px',

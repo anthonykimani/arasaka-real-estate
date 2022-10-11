@@ -11,6 +11,7 @@ module.exports = {
       'passion':['Passion One', 'cursive'],
       'jost': ['Jost', 'sans-serif'],
       'open': ['Open Sans', 'sans-serif'],
+      'work':['Work Sans', 'sans-serif']
     },
     screens: {
       'xxs':'320px',

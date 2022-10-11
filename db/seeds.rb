@@ -12,12 +12,12 @@ john = User.create(firstname: "john", lastname: "doe", email: "johndoe@gmail.com
 jane = User.create(firstname: "jane", lastname: "doe", email: "janedoe@gmail.com", password_digest: "password")
 bill = User.create(firstname: "bill", lastname: "burr", email: "billburr@gmail.com", password_digest: "password")
 
-bedsitter = Property.create(property_name:"faraja apartments", price:12500, location:"ruiru", image:"https://i.postimg.cc/fb4Kz16V/bedroom.jpg")
-singleroom = Property.create(property_name:"joska singlerooms", price:4500, location:"kawangware", image:"https://i.postimg.cc/HnW3G5F3/couch.jpg")
-one_bedroom = Property.create(property_name:"highland apartments", price:22500, location:"kilimani", image:"https://i.postimg.cc/t496BpQt/roam-in-color-Rry-Fk4n-v-Os-unsplash.jpg")
-two_bedroom = Property.create(property_name:"Dove apartments", price:32500, location:"kitui", image:"https://i.postimg.cc/TPwDX0PK/studio.jpg")
-doubleroom = Property.create(property_name:"oscar singlerooms", price:6500, location:"utawala", image:"https://i.postimg.cc/2STZJMCp/sitting-room.jpg")
-mansion = Property.create(property_name:"Lux apartments", price:42500, location:"kileleshwa", image:"https://i.postimg.cc/pr9hnLjR/highrise.jpg")
+bedsitter = Property.create(property_name:"faraja apartments", price:12500, location:"ruiru", image:"https://i.postimg.cc/fb4Kz16V/bedroom.jpg", property_description:"A quiet neighborhood in the surburbans outside the city")
+singleroom = Property.create(property_name:"joska singlerooms", price:4500, location:"kawangware", image:"https://i.postimg.cc/HnW3G5F3/couch.jpg", property_description:"Comfort is a must in this deluxe apartment with spacious rooms")
+one_bedroom = Property.create(property_name:"highland apartments", price:22500, location:"kilimani", image:"https://i.postimg.cc/t496BpQt/roam-in-color-Rry-Fk4n-v-Os-unsplash.jpg", property_description:"A fully decked out dining room for those family moments")
+two_bedroom = Property.create(property_name:"Dove apartments", price:32500, location:"kitui", image:"https://i.postimg.cc/TPwDX0PK/studio.jpg", property_description:"The Perfect Chill spot for you and your friends ")
+doubleroom = Property.create(property_name:"oscar singlerooms", price:6500, location:"utawala", image:"https://i.postimg.cc/2STZJMCp/sitting-room.jpg", property_description:"A Customized experience dealing with the rarest Decor")
+mansion = Property.create(property_name:"Lux apartments", price:42500, location:"kileleshwa", image:"https://i.postimg.cc/pr9hnLjR/highrise.jpg", property_description:"A House in the Sky overlooking the Horizon is the morning you need")
 
 
 purchase_one = Purchase.create(user_id:john.id, property_id:bedsitter.id, name: bedsitter.property_name)

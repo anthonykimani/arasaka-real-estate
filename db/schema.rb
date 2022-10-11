@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_032950) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_111440) do
   create_table "properties", force: :cascade do |t|
     t.string "property_name"
     t.integer "price"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_032950) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "property_description"
+    t.string "property_type"
   end
 
   create_table "purchases", force: :cascade do |t|

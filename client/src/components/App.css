@@ -5,3 +5,7 @@
 *{
     /* border:1px solid red; */
 }
+
+#scroll::-webkit-scrollbar {
+    display: none;
+  }

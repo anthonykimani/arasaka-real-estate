@@ -25,7 +25,7 @@ const DisplayPropertyCard = ({
             </div>
             <hr className="border border-gray-200 my-3" />
             <div className="px-2">
-              <button className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-bold leading-none text-white focus:outline-none bg-blue-500 border rounded hover:bg-blue-600 py-3 px-5 w-full font-open ">Purchase</button>
+              <button className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-bold leading-none text-white focus:outline-none bg-blue-500 border rounded hover:bg-blue-600 py-3 px-5 w-full font-open ">View Property</button>
             </div>
           </div>
           <h4 className="px-2">*prices may vary</h4>

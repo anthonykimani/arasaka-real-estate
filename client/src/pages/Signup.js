@@ -1,10 +1,40 @@
 import Navbar from "../components/Navbar";
+import { AppContext } from "../contexts/AppContext";
+import { useContext } from "react";
 
 const Signup = () => {
+
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+
+  const handleInput = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    // console.log(user);
+    return setUser({...user, [name]:value.toLowerCase()});
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const addUser = {
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+      password: user.password,
+    };
+    await fetch("http://localhost:3000/users",{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(addUser),
+    });
+    // console.log("user created");
+  }
+
   return (
     <div>
       <Navbar />
-      <div className="bg-indigo-50 font-jost">
+      <div className="bg-indigo-50 font-jost mt-[80px]">
         <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
           <div className=" md:hidden sm:mb-8 mb-6"></div>
           <div className="bg-white shadow-lg rounded  md:w-[100%] md:max-w-[800px] lg:w-[100%] lg:max-w-[1000px] flex flex-col lg:flex-row">
@@ -31,7 +61,7 @@ const Signup = () => {
                   Login here
                 </h3>
               </p>
-              <form className="xxs:w-[250px] xsm:w-[400px] sm:w-[500px] md:w-[600px] lg:w-[300px] mt-5">
+              <form onSubmit={handleSubmit} className="xxs:w-[250px] xsm:w-[400px] sm:w-[500px] md:w-[600px] lg:w-[300px] mt-5">
                 <div>
                   <label
                     htmlFor="firstname"
@@ -47,6 +77,7 @@ const Signup = () => {
                     type="text"
                     className="bg-gray-100 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"
                     placeholder="e.g: John"
+                    onChange={handleInput}
                   />
                 </div>
                 <div className="mt-3 w-full">
@@ -64,6 +95,7 @@ const Signup = () => {
                     type="text"
                     className="bg-gray-100 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"
                     placeholder="e.g: Doe "
+                    onChange={handleInput}
                   />
                 </div>
                 <div className="mt-3 w-full">
@@ -81,6 +113,7 @@ const Signup = () => {
                     type="email"
                     className="bg-gray-100 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"
                     placeholder="e.g: john@gmail.com "
+                    onChange={handleInput}
                   />
                 </div>
                 <div className="mt-3 w-full">
@@ -97,6 +130,7 @@ const Signup = () => {
                       name="password"
                       //   type={showpass ? "text" : "password"}
                       className="bg-gray-100 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                      onChange={handleInput}
                     />
                   </div>
                 </div>

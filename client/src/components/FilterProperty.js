@@ -2,8 +2,8 @@ import { FilterContext } from "../contexts/FilterContext";
 import { useContext } from "react";
 
 const FilterProperty = () => {
-    const { properties } = useContext(FilterContext);
-    const { setFilteredProperties } = useContext(FilterContext);
+    const { properties, setFilteredProperties } = useContext(FilterContext);
+    // const {  } = useContext(FilterContext);
 
     //filter properties by property type
     const handleFilter = (property_type)=>{

@@ -7,7 +7,7 @@ import { FilterContext } from "../contexts/FilterContext";
 const Property = () => {
   //initial state for properties
   const [properties, setProperties] = useState([]);
-  const [filteredProperties, setFilteredProperties ] = useState([]);
+  const [filteredProperties, setFilteredProperties] = useState([]);
 
   //fetching properties
   useEffect(() => {
@@ -25,19 +25,26 @@ const Property = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-indigo-50 h-100%">
       <Navbar />
-      <FilterContext.Provider value={{properties,setProperties, filteredProperties, setFilteredProperties}} >
-      <FilterProperty />
+      <FilterContext.Provider
+        value={{
+          properties,
+          setProperties,
+          filteredProperties,
+          setFilteredProperties,
+        }}
+      >
+        <FilterProperty />
       </FilterContext.Provider>
-        <div className="mt-[30px] mx-2 max-w-[1100px] w-[100%] flex items-center flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {filteredProperties.map((property) => (
-            <DisplayPropertyCard
-              img={property.image}
-              property_name={property.property_name}
-              price={property.price}
-              location={property.location}
-            />
-          ))}
-        </div>
+      <div className="mt-[30px] mx-2 max-w-[1100px] w-[100%] flex items-center flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {filteredProperties.map((property) => (
+          <DisplayPropertyCard
+            img={property.image}
+            property_name={property.property_name}
+            price={property.price}
+            location={property.location}
+          />
+        ))}
+      </div>
     </div>
   );
 };

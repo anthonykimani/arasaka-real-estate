@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return ( 
-        <div className="flex justify-around items-center bg-gray-50 shadow-lg font-open py-1 absolute top-0 z-10 w-screen">
+        <div className="flex justify-around items-center bg-gray-50 shadow-lg font-open py-1 absolute top-0 z-10 w-[100%] max-w-screen">
             <div className="">
                 <img src={process.env.PUBLIC_URL + "/arasaka_logo.png"} alt="" className="min-w-[150px] max-w-[150px] object-contain" />
             </div>

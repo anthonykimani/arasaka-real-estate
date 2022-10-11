@@ -15,7 +15,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="flex items-center justify-around">
-            <h3 className="font-open text-gray-800 text-xl pr-5">Sign in</h3>
+            <h3 className="font-open text-gray-800 text-xl pr-5"><Link to={"/signup"}>Sign Up</Link></h3>
             <i className='bx bxs-user-circle bx-md text-gray-600'></i>
             </div>
         </div>

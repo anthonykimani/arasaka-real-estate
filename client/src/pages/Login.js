@@ -12,7 +12,7 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
-  const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+  const { user, setUser, isLoggedIn, setIsLoggedIn, setDisabled } = useContext(AppContext);
 
   const handleNavigate = () => {
     navigate("/signup");
@@ -48,8 +48,9 @@ const Login = () => {
     // console.log(response)
     response ? setIsLoggedIn(true) : setIsLoggedIn(false);
     if (isLoggedIn) {
-      navigate("/");
       setUser(response);
+      setDisabled(false);
+      navigate("/");
     }
   };
 

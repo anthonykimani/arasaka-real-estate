@@ -12,7 +12,7 @@ const Signup = () => {
     password:null,
   })
   const navigate = useNavigate()
-  const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+  const { user, setUser, isLoggedIn, setIsLoggedIn, setDisabled } = useContext(AppContext);
 
   const handleNavigate = () =>{
     navigate("/login");
@@ -45,6 +45,7 @@ const Signup = () => {
     if(response){
       setUser(response);
       setIsLoggedIn(true)
+      setDisabled(false);
       navigate("/")
     }
     // console.log("user created");

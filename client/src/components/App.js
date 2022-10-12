@@ -13,13 +13,14 @@ import PropertyCart from "../pages/PropertyCart";
 
 function App() {
 
-  const [ user, setUser ] = useState(null);
+  const [ user, setUser ] = useState("Friend");
   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+  const [ disabled, setDisabled ] = useState(true);
   const [ propertyId, setPropertyId ] = useState(1);
 
   return (
     <div className="App">
-      <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, propertyId, setPropertyId }}>
+      <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, propertyId, setPropertyId, disabled, setDisabled }}>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

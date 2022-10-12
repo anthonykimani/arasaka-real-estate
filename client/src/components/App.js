@@ -11,12 +11,7 @@ import { AppContext } from "../contexts/AppContext";
 
 function App() {
 
-  const [ user, setUser ] = useState({
-    first_name:null,
-    last_name:null,
-    email:null,
-    password:null,
-  });
+  const [ user, setUser ] = useState(null);
   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
 
   return (

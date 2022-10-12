@@ -1,40 +1,59 @@
 import Navbar from "../components/Navbar";
 import { AppContext } from "../contexts/AppContext";
-import { useContext } from "react";
+import { useState,useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
 
+  const [ login, setLogin ] = useState({
+    first_name:null,
+    last_name:null,
+    email:null,
+    password:null,
+  })
+  const navigate = useNavigate()
   const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(AppContext);
+
+  const handleNavigate = () =>{
+    navigate("/login");
+  }
 
   const handleInput = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     // console.log(user);
-    return setUser({...user, [name]:value.toLowerCase()});
+    return setLogin({...login, [name]:value.toLowerCase()});
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const addUser = {
-      first_name: user.first_name,
-      last_name: user.last_name,
-      email: user.email,
-      password: user.password,
+      first_name: login.first_name,
+      last_name: login.last_name,
+      email: login.email,
+      password: login.password,
     };
-    await fetch("http://localhost:3000/users",{
+    let response  = await fetch("http://localhost:3000/users",{
       method:"POST",
       headers:{
         "content-type":"application/json"
       },
       body:JSON.stringify(addUser),
     });
-    // console.log("user created");
+    response = await response.json();
+    console.log(response);
+    if(response){
+      setUser(response);
+      setIsLoggedIn(true)
+      navigate("/")
+    }
+    console.log("user created");
   }
 
   return (
     <div>
       <Navbar />
-      <div className="bg-indigo-50 font-jost mt-[80px]">
+      <div className="bg-indigo-50 font-jost mt-[40px]">
         <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
           <div className=" md:hidden sm:mb-8 mb-6"></div>
           <div className="bg-white shadow-lg rounded  md:w-[100%] md:max-w-[800px] lg:w-[100%] lg:max-w-[1000px] flex flex-col lg:flex-row">
@@ -57,7 +76,7 @@ const Signup = () => {
                 className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500 flex"
               >
                 Already have account?
-                <h3 className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer ml-2">
+                <h3 onClick={handleNavigate} className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer ml-2">
                   Login here
                 </h3>
               </p>
@@ -142,7 +161,7 @@ const Signup = () => {
                     htmlFor="myInput"
                     className="text-sm font-medium leading-none text-red-700 "
                   >
-                    Please SignUp or Login if you have an account
+                    Please Sign Up if you have an account
                   </label>
                 </div>
                 <div
@@ -153,7 +172,7 @@ const Signup = () => {
                     htmlFor="myInput"
                     className="text-sm font-medium leading-none text-red-700 "
                   >
-                    Incorrect Login
+                    Incorrect Sign Up 
                   </label>
                 </div>
                 <div className="mt-2">

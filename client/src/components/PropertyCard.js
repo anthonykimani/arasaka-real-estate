@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const PropertyCard = ({
   img,
   property_name,
@@ -5,6 +7,13 @@ const PropertyCard = ({
   price,
   location,
 }) => {
+
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    navigate("/cart")
+  }
+
   return (
     <div className="flex flex-col md:flex-row md:max-w-[1200px] md:w-[100%] bg-white font-jost text-gray-900 rounded-lg shadow-lg mt-[100px] mx-2">
       <div className="md:max-w-[500px] w-[100%]">
@@ -24,7 +33,7 @@ const PropertyCard = ({
               <h3><span className="font-extrabold font-work text-2xl">${price}</span>per unit*</h3>
             </div>
             <div>
-              <button className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-bold leading-none text-white focus:outline-none bg-blue-500 border rounded hover:bg-blue-600 py-3 px-5 w-full font-work ">
+              <button onClick={handleAddToCart} className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-bold leading-none text-white focus:outline-none bg-blue-500 border rounded hover:bg-blue-600 py-3 px-5 w-full font-work ">
                 Purchase
               </button>
             </div>

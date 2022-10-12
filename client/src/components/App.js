@@ -9,6 +9,7 @@ import Property from "../pages/Property";
 import Purchase from "../pages/Purchase";
 import { AppContext } from "../contexts/AppContext";
 import SelectedProperty from "../pages/SelectedProperty";
+import PropertyCart from "../pages/PropertyCart";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/selected" element={<SelectedProperty />} />
+            <Route path="/cart" element={<PropertyCart />} />
           </Routes>
         </Router>
       </AppContext.Provider>

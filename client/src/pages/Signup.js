@@ -41,13 +41,13 @@ const Signup = () => {
       body:JSON.stringify(addUser),
     });
     response = await response.json();
-    console.log(response);
+    // console.log(response);
     if(response){
       setUser(response);
       setIsLoggedIn(true)
       navigate("/")
     }
-    console.log("user created");
+    // console.log("user created");
   }
 
   return (

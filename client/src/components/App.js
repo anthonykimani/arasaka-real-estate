@@ -8,15 +8,17 @@ import Login from "../pages/Login";
 import Property from "../pages/Property";
 import Purchase from "../pages/Purchase";
 import { AppContext } from "../contexts/AppContext";
+import SelectedProperty from "../pages/SelectedProperty";
 
 function App() {
 
   const [ user, setUser ] = useState(null);
   const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+  const [ propertyId, setPropertyId ] = useState(1);
 
   return (
     <div className="App">
-      <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn}}>
+      <AppContext.Provider value={{user, setUser, isLoggedIn, setIsLoggedIn, propertyId, setPropertyId }}>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -24,6 +26,7 @@ function App() {
             <Route path="/purchase" element={<Purchase />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/selected" element={<SelectedProperty />} />
           </Routes>
         </Router>
       </AppContext.Provider>

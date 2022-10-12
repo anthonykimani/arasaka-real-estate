@@ -17,7 +17,7 @@ class PropertiesController < ApplicationController
     private
 
     def find_property
-        Property.find(param[:id])
+        Property.find(params[:id])
     end
 
     # def create_property

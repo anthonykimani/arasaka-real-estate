@@ -28,6 +28,7 @@ const SelectedProperty = () => {
         <PropertyCard
           img={selectedProperty.image}
           property_name={selectedProperty.property_name}
+          property_description={selectedProperty.property_description}
           price={selectedProperty.price}
           location={selectedProperty.location}
         />

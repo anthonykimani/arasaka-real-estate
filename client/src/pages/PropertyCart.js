@@ -5,7 +5,6 @@ import { AppContext } from "../contexts/AppContext";
 const PropertyCart = () => {
 
   const { propertyId, isLoggedIn, user, disabled } = useContext(AppContext);
-
   const [cartItem, setCartItem] = useState({});
 
   //fetch individual property
@@ -16,7 +15,7 @@ const PropertyCart = () => {
         `http://localhost:3000/properties/${propertyId}`
       );
       response = await response.json();
-      await console.log(response);
+    //   await console.log(response);
       setCartItem(response);
     };
     handleGetProperty();
@@ -30,14 +29,14 @@ const PropertyCart = () => {
           property_id:cartItem.id,
           name:cartItem.property_name,
       }
-    //   console.log(addPurchase);
-      let response = await fetch("http://localhost:3000/purchases",{
-          method:"POST",
-          headers:{
-              "content-type":"application/json",
-          },
-          body:JSON.stringify(addPurchase)
-      })
+      console.log(addPurchase);
+    //   let response = await fetch("http://localhost:3000/purchases",{
+    //       method:"POST",
+    //       headers:{
+    //           "content-type":"application/json",
+    //       },
+    //       body:JSON.stringify(addPurchase)
+    //   })
   }
 
   return (

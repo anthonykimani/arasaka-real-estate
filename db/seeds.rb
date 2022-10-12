@@ -8,9 +8,9 @@
 
 puts "Seeding...please wait"
 
-john = User.create(first_name: "john", last_name: "doe", email: "johndoe@gmail.com", password_digest: "password")
-jane = User.create(first_name: "jane", last_name: "doe", email: "janedoe@gmail.com", password_digest: "password")
-bill = User.create(first_name: "bill", last_name: "burr", email: "billburr@gmail.com", password_digest: "password")
+# john = User.create(first_name: "john", last_name: "doe", email: "johndoe@gmail.com", password_digest: "password")
+# jane = User.create(first_name: "jane", last_name: "doe", email: "janedoe@gmail.com", password_digest: "password")
+# bill = User.create(first_name: "bill", last_name: "burr", email: "billburr@gmail.com", password_digest: "password")
 
 bedsitter = Property.create(property_type:"bedsitter", property_name:"faraja apartments", price:12500, location:"ruiru", image:"https://i.postimg.cc/fb4Kz16V/bedroom.jpg", property_description:"A quiet neighborhood in the surburbans outside the city")
 singleroom = Property.create(property_type:"singleroom", property_name:"joska singlerooms", price:4500, location:"kawangware", image:"https://i.postimg.cc/HnW3G5F3/couch.jpg", property_description:"Comfort is a must in this deluxe apartment with spacious rooms")
@@ -20,9 +20,9 @@ doubleroom = Property.create(property_type:"doubleroom", property_name:"oscar si
 mansion = Property.create(property_type:"apartment", property_name:"Lux apartments", price:42500, location:"kileleshwa", image:"https://i.postimg.cc/pr9hnLjR/highrise.jpg", property_description:"A House in the Sky overlooking the Horizon is the morning you need")
 
 
-purchase_one = Purchase.create(user_id:john.id, property_id:bedsitter.id, name: bedsitter.property_name)
-purchase_two = Purchase.create(user_id:jane.id, property_id:one_bedroom.id, name: one_bedroom.property_name)
-purchase_three = Purchase.create(user_id:bill.id, property_id:singleroom.id, name: singleroom.property_name)
+# purchase_one = Purchase.create(user_id:john.id, property_id:bedsitter.id, name: bedsitter.property_name)
+# purchase_two = Purchase.create(user_id:jane.id, property_id:one_bedroom.id, name: one_bedroom.property_name)
+# purchase_three = Purchase.create(user_id:bill.id, property_id:singleroom.id, name: singleroom.property_name)
 
 
 # https://i.postimg.cc/SxYdpmt0/apartments.jpg

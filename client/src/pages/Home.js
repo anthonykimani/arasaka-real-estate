@@ -1,6 +1,7 @@
 import house from "../house.svg"
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
+import MobileNav from "../components/MobileNav";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
           <h2 className="font-jost text-3xl md:text-5xl w-[100%] max-w-[500px]">Purchase a Property in 5 minutes </h2>
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 };

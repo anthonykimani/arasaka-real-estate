@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import { AppContext } from "../contexts/AppContext";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import MobileNav from "../components/MobileNav";
 
 const Signup = () => {
 
@@ -188,6 +189,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 };

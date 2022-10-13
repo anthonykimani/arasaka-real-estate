@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import DisplayPropertyCard from "../components/DisplayPropertyCard";
 import FilterProperty from "../components/FilterProperty";
 import { FilterContext } from "../contexts/FilterContext";
+import MobileNav from "../components/MobileNav";
 
 const Property = () => {
 
@@ -47,6 +48,7 @@ const Property = () => {
           />
         ))}
       </div>
+      <MobileNav />
     </div>
   );
 };

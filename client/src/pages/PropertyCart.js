@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import MobileNav from "../components/MobileNav";
 
 const PropertyCart = () => {
   const { propertyId, isLoggedIn, user, disabled } = useContext(AppContext);
@@ -115,6 +116,7 @@ const PropertyCart = () => {
           </div>
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 };

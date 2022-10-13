@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 const PurchasedProperty = ({
+  id,
   img,
   property_name,
   property_description,
@@ -10,8 +11,11 @@ const PurchasedProperty = ({
 
   const navigate = useNavigate();
 
-  const handleAddToCart = () => {
-    navigate("/cart")
+  const handleDelete = async() => {
+    // console.log(id)
+    let response = await fetch(`http://localhost:3000/purchases/${id}`,{
+      method:"DELETE",
+    })
   }
 
   return (
@@ -33,8 +37,8 @@ const PurchasedProperty = ({
               <h3><span className="font-extrabold font-work text-2xl">${price}</span>per unit*</h3>
             </div>
             <div>
-              <button onClick={handleAddToCart} className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-bold leading-none text-white focus:outline-none bg-blue-500 border rounded hover:bg-blue-600 py-3 px-5 w-full font-work ">
-                Purchase
+              <button onClick={handleDelete} className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-bold leading-none text-white focus:outline-none bg-blue-500 border rounded hover:bg-blue-600 py-3 px-5 w-full font-work ">
+                Delete
               </button>
             </div>
           </div>

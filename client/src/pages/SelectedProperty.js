@@ -2,6 +2,7 @@ import PropertyCard from "../components/PropertyCard";
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 import Navbar from "../components/Navbar";
+import MobileNav from "../components/MobileNav";
 
 const SelectedProperty = () => {
   const { propertyId } = useContext(AppContext);
@@ -33,6 +34,7 @@ const SelectedProperty = () => {
           location={selectedProperty.location}
         />
       </div>
+      <MobileNav />
     </div>
   );
 };

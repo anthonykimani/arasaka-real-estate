@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import { AppContext } from "../contexts/AppContext";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import MobileNav from "../components/MobileNav";
 
 const Login = () => {
   const [login, setLogin] = useState({
@@ -197,6 +198,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 };

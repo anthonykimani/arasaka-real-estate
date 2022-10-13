@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import MobileNav from "../components/MobileNav";
 import Navbar from "../components/Navbar";
 import PropertyCard from "../components/PropertyCard";
 import PurchasedProperty from "../components/PurchasedProperty";
@@ -31,6 +32,7 @@ const Purchase = () => {
       <Navbar />
       {filteredProperties.map((element) => {
         return <PurchasedProperty
+          id={element.id}
           img={element.property.image}
           property_name={element.property.property_name}
           property_description={element.property.property_description}
@@ -38,6 +40,7 @@ const Purchase = () => {
           location={element.property.location}
         />;
       })}
+      <MobileNav />
     </div>
   );
 };

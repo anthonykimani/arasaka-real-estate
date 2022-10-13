@@ -1,18 +1,22 @@
+import house from "../house.svg"
+import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <div>
-        <img
-          src={process.env.PUBLIC_URL + "/mansion.jpg"}
-          alt=""
-          className="absolute top-0 z-0 brightness-50 h-screen object-cover w-screen"
-        />
+      <HeroSection />
+      <div className="mt-[600px] flex flex-col items-center p-5">
+        <h1 className="font-open text-2xl max-w-[900px] w-[100%]"><span className="font-work text-5xl text-blue-500">Arasaka </span>real estate is a Real Estate Web Application, where anyone can view, purchase their dream real estate or property.</h1>
       </div>
-      <div className="relative top-56 z-10 flex justify-around items-center">
-          <h1 className="w-[400px] text-3xl text-white font-work font-semibold text-center sm:text-6xl sm:w-[700px]">Property Buying and Selling made Easy</h1>
+      <div className="flex flex-col items-center md:flex-row  md:justify-center md:items-center">
+        <div className="max-w-[450px] w-[100%]">
+          <img src={house} alt="" className="max-w-[900px] w-[100%]" />
+        </div>
+        <div>
+          <h2 className="font-jost text-3xl md:text-5xl w-[100%] max-w-[500px]">Purchase a Property in 5 minutes </h2>
+        </div>
       </div>
     </div>
   );

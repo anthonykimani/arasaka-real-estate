@@ -16,11 +16,11 @@ const PurchasedProperty = ({
 
   return (
     <div className="flex flex-col md:flex-row md:max-w-[800px] md:w-[100%] bg-white font-jost text-gray-900 rounded-lg shadow-lg mt-[100px] mx-2">
-      <div className="md:max-w-[500px] w-[100%]">
+      <div className="md:max-w-[300px] w-[100%]">
         <img
           src={process.env.PUBLIC_URL + img}
           alt=""
-          className="object-cover max-w-[600px] w-[100%] md:max-w-[600px] md:h-[100%] md:min-h-[500px] rounded-t-md md:rounded-l-md md:rounded-t-none"
+          className="object-cover max-w-[600px] w-[100%] md:max-w-[600px] md:h-[100%] md:max-h-[300px] rounded-t-md md:rounded-l-md md:rounded-t-none"
         />
       </div>
       <div className="md:max-w-[450px] md:w-[100%] flex justify-around py-3">

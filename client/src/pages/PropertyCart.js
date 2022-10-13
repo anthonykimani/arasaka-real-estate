@@ -29,14 +29,15 @@ const PropertyCart = () => {
           property_id:cartItem.id,
           name:cartItem.property_name,
       }
-      console.log(addPurchase);
-    //   let response = await fetch("http://localhost:3000/purchases",{
-    //       method:"POST",
-    //       headers:{
-    //           "content-type":"application/json",
-    //       },
-    //       body:JSON.stringify(addPurchase)
-    //   })
+      // console.log(addPurchase);
+      let response = await fetch("http://localhost:3000/purchases",{
+          method:"POST",
+          headers:{
+              "content-type":"application/json",
+          },
+          body:JSON.stringify(addPurchase)
+      })
+      console.log("purchased")
   }
 
   return (
